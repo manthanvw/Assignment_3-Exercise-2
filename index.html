@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: aquamarine;
+        }
+
+        .container {
+            text-align:center;
+    
+        }
+        table {
+            border: 10px outset grey;
+            background-color: white;
+            margin: auto;
+            
+        }
+        td {
+            border: 3px solid black;
+            padding:10px 10px;
+            font-size: 200%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <button type="button" id="btn" onclick="display()">
+            Click here to display table
+        </button>
+    </div>
+    <br>
+    <div class="container" id="tab"></div>
+    <script>
+        function display() {
+            const names = ["Anakin", "Obi-Wan", "Luke", "Leia"];
+            let text = "<table><tbody>";
+            names.forEach(add);
+            function add(name, i) {
+                text +=
+                    '<tr><td>' +
+                    (i + 1) +
+                    "</td>" +
+                    '<td>' +
+                    name +
+                    "</td></tr>";
+                i += 1;
+            }
+            text += "</tbody></table>";
+            document.getElementById("tab").innerHTML = text;
+        }
+    </script>
+</body>
+
+</html>
